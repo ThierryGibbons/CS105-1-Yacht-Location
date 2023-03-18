@@ -1,5 +1,9 @@
-The Ocean Race 2021-22 route is announced. Yachts are ready to sail and will visit 10 international
-cities, including the start port and the Grand Finale finish in Genoa, Italy.
+The Ocean Race 2021-22 route is announced. Yachts are ready to sail and will visit 10 international 
+cities, including the start port and the Grand Finale finish in Genoa, Italy. In ocean navigation, 
+degrees and minutes (for latitude and longitude) are used to measure locations along with the 
+direction. Degrees of latitude are either north (N) or south (S) measured from 0 to 180 degrees and 
+degrees longitude are either east (E) or west (W) measured from 0 to 90.
+Example: 38°56’N, 71°0’W is 38 degrees 56 minutes North and 71 degrees 0 minutes West.
 
 Task:
 1. Your task is to create a class `Yacht` that includes the yacht's number and location.
