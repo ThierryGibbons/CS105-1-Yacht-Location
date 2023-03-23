@@ -11,30 +11,71 @@ class Location { //                                                             
         int chur = 0;
                                                                                 // -----
         //                                                                          Step 1b: Implement the getpos() member function
-        void getpos(bool lat) {
-            //                                                                              Declare local variables
-            bool deg = true;
-            bool min = true;
-            bool dir = true;
+    void getpos(bool lat) {
+        // Declare local variables
+        bool deg = true;
+        bool min = true;
+        bool dir = true;
 
-            //                                                                              Get Location from user
-            cout << "Input degrees between 0 and 180: "; //                                     Get Degrees
-            cin >> degrees; //                                                                  "
-// Validate input
-            cout << "Enter minutes between 0 and 60: "; //                                      Get Minutes
-            cin >> minutes; //                                                                  "
-// Validate input
+        //                                                                                  Get Location from user
+        while (deg) {
+            cout << "Input degrees between 0 and 180: "; //                                         Get Degrees
+            cin >> degrees;
 
-            if (lat) { //                                                                        If latitude
-                cout << "Enter latitude (N/S): "; //                                            Get Direction
-                cin >> direction; //                                                            "
-// Validate input
-            } else { //                                                                          If longitude
-                cout << "Enter longitude (E/W): "; //                                            Get Direction
-                cin >> direction; //                                                            "
-// Validate input
+            if (cin.fail() || degrees < 0 || degrees > 180) {
+                cout << "Invalid input." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            } else {
+                deg = false;
             }
         }
+
+        while (min) {
+            cout << "Enter minutes between 0 and 60: "; //                                          Get Minutes
+            cin >> minutes;
+
+            if (cin.fail() || minutes < 0 || minutes >= 60) {
+                cout << "Invalid input." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            } else {
+                min = false;
+            }
+        }
+
+    //                                                                                              Get Direction
+    if (lat) {
+            while (dir) {
+                cout << "Enter latitude (N/S): ";
+                cin >> direction;
+
+                if (cin.fail() || (toupper(direction) != 'N' && toupper(direction) != 'S')) {
+                    cout << "Invalid input. Please enter either N or S." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                } else {
+                    dir = false;
+                    direction = toupper(direction);
+                }
+            }
+        } else {
+            while (dir) {
+                cout << "Enter longitude (E/W): ";
+                cin >> direction;
+
+                if (cin.fail() || (toupper(direction) != 'E' && toupper(direction) != 'W')) {
+                    cout << "Invalid input. Please enter either E or W." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                } else {
+                    dir = false;
+                    direction = toupper(direction);
+                }
+            }
+        }
+    }
+
                                                                                 // -----
 };
 
