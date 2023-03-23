@@ -7,27 +7,33 @@ class Location { //                                                             
         int degrees; //                                                                         Stores degrees, it's an integer because degrees are whole numbers (0 to 180 for latitude, 0 to 90 for longitude)
         float minutes; //                                                                       Stores minutes, it's a float because minutes can have decimal values (0 to 59.9999)
         char direction; //                                                                      Stores the direction letter (N, S, E, W), it's a char because it will only store one character
+
+        int chur = 0;
                                                                                 // -----
         //                                                                          Step 1b: Implement the getpos() member function
         void getpos(bool lat) {
+            //                                                                              Declare local variables
+            bool deg = true;
+            bool min = true;
+            bool dir = true;
+
             //                                                                              Get Location from user
             cout << "Input degrees between 0 and 180: "; //                                     Get Degrees
             cin >> degrees; //                                                                  "
+// Validate input
             cout << "Enter minutes between 0 and 60: "; //                                      Get Minutes
             cin >> minutes; //                                                                  "
+// Validate input
 
             if (lat) { //                                                                        If latitude
                 cout << "Enter latitude (N/S): "; //                                            Get Direction
                 cin >> direction; //                                                            "
+// Validate input
             } else { //                                                                          If longitude
                 cout << "Enter longitude (E/W): "; //                                            Get Direction
                 cin >> direction; //                                                            "
+// Validate input
             }
-
-
-
-            // cout << "Enter direction (E/W/N/S): "; //                                           Get Direction
-            // cin >> direction; //                                                                "
         }
                                                                                 // -----
 };
