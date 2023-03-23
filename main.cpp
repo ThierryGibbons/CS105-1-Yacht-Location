@@ -7,8 +7,6 @@ class Location { //                                                             
         int degrees; //                                                                         Stores degrees, it's an integer because degrees are whole numbers (0 to 180 for latitude, 0 to 90 for longitude)
         float minutes; //                                                                       Stores minutes, it's a float because minutes can have decimal values (0 to 59.9999)
         char direction; //                                                                      Stores the direction letter (N, S, E, W), it's a char because it will only store one character
-
-        int chur = 0;
                                                                                 // -----
         //                                                                          Step 1b: Implement the getpos() member function
     void getpos(bool lat) {
@@ -94,9 +92,6 @@ class Yacht {
     Yacht() {
         count++;
         serial_number = count;
-
-        //                                                                                  Create a location object for yacht's location
-        Location location;
     }
 
     //                                                                              Step 2d: Implement the get_pos() member function
@@ -143,8 +138,6 @@ int main() {
 
     //                                                                                  Display Title: Cuurent Results
     cout << "\n**************Welcome to Ocean Race 2021-22**************\n" << endl;
-
-    cout << "chur" << endl;
 
     return 0;
 }
