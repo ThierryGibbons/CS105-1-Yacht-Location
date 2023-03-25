@@ -15,6 +15,12 @@ class Location { //                                                             
         bool min = true;
         bool dir = true;
 
+    if (lat) {
+            cout << "\nLatitude" << endl;
+        } else {
+            cout << "\nLongitude" << endl;
+        }
+
         //                                                                                  Get Location from user
         while (deg) {
             cout << "Input degrees between 0 and 180: "; //                                         Get Degrees
